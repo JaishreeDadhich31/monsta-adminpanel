@@ -1,13 +1,29 @@
-import React from 'react'
-import { RiMenu3Line } from 'react-icons/ri'
+import { FiBell, FiMenu, FiSearch } from "react-icons/fi";
 
 export default function Header({ onMenuClick }) {
   return (
-      <header className="admin-mobile-header">
-        <button type="button" onClick={onMenuClick} aria-label="Open menu" className="admin-menu-button">
-          <RiMenu3Line size="25" />
+    <header className="quiz-header">
+      <button
+        className="menu-button"
+        onClick={onMenuClick}
+        aria-label="Open navigation"
+      >
+        <FiMenu />
+      </button>
+      <div className="header-search">
+        <FiSearch />
+        <input
+          aria-label="Search"
+          placeholder="Search quizzes, users or attempts"
+        />
+      </div>
+      <div className="header-actions">
+        <button aria-label="Notifications" className="bell">
+          <FiBell />
+          <i />
         </button>
-        <span>Admin Panel</span>
-      </header>
-  )
+        <div className="avatar">AN</div>
+      </div>
+    </header>
+  );
 }
